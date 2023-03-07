@@ -1,5 +1,5 @@
 # Bem vindos a aula de programação Front- End 🧙🏿‍♂️
-Olá me chamo João Lourenço tenho 16 anos de idade e estdudo no CEEP.
+Olá me chamo João Lourenço tenho 16 anos de idade e estudo no CEEP.
 
 Meu e-mail é lourenco.joao01@escola.pr.gov.br.
 
