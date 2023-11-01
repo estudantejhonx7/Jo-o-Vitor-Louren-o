@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <style>
+    body {
+      margin: 0;
+      background: url("https://64.media.tumblr.com/7775c50bfff9946b8b0337f9478bab9c/tumblr_mzdlsj9W9e1rpq66vo1_400.jpg") repeat;
+      display: flex;
+      justify-content: center;
+      color: white;
+    }
+
+    .conteudo {
+      width: 25vw;
+      height: 100vh;
+      background: #6C3428;
+      border: 2px solid #BA704F;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      padding: 15px 10px;
+    }
+
+    button {
+      padding: 5px 10px;
+      width: 120px;
+    }
+    img {
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="conteudo">
+    <h1>Atividade Menon</h1>
+    <br />
+    <row>
+      <span>Nome:</span>
+      <input id="nome" placeholder="Informe seu nome"></input>
+    </row>
+    <row>
+      <span>Idade:</span>
+      <input id="idade" type="number" placeholder="Informe sua idade"></input>
+    </row>
+    <row>
+      <input type="radio" id="masculino" name="genero">
+      <label for="masculino">Masculino</label>
+      <input type="radio" id="feminino" name="genero">
+      <label for="feminino">Feminino</label>
+    </row>
+    <button onclick="enviar()">Enviar</button>
+    <span id="resposta"></span>
+    <img id="resposta-imagem"></img>
+  </div>
+  <script>
+      function enviar() {
+        const nome = document.getElementById("nome").value;
+        const idade = Number(document.getElementById("idade").value);
+        const masculino = document.getElementById("masculino").checked;
+        const feminino = document.getElementById("feminino").checked;
+        var resposta = document.getElementById("resposta");
+        var respostaImagem = document.getElementById("resposta-imagem");
+        
+        if (nome == "" || idade == "" || idade < 0) {
+          resposta.innerHTML = "Preencha todos os campos corretamente";
+        } else if(!masculino && !feminino) {
+          resposta.innerHTML = "Selecione um gênero";
+        } else if (masculino) {
+          resposta.innerHTML = `Você se chama ${nome}, tem ${idade} anos e é um homem.`;
+          if (idade < 3) {
+            respostaImagem.src = "./img/baby.png";
+          } else if (idade < 13) {
+            respostaImagem.src = "./img/crianca_masc.png";
+          } else if (idade < 65) {
+            respostaImagem.src = "./img/adulto_masc.png";
+          } else {
+            respostaImagem.src = "./img/idoso_masc.png";
+          }
+        } else if (feminino) {
+          resposta.innerHTML = `Você se chama ${nome}, tem ${idade} anos e é uma mulher.`;
+          if (idade < 3) {
+            respostaImagem.src = "./img/baby.png";
+          } else if (idade < 13) {
+            respostaImagem.src = "./img/crianca_fem.png";
+          } else if (idade < 65) {
+            respostaImagem.src = "./img/adulto_fem.png";
+          } else {
+            respostaImagem.src = "./img/idoso_fem.png";
+          }
+        }
+      }
+  </script>
+
+
+</body>
+
+</html>
